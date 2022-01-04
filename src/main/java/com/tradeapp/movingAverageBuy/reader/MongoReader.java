@@ -36,7 +36,7 @@ public class MongoReader {
                 .sorts(sorts)
                 .template(template)
                 .targetType(MovingAverageAlert.class)
-                .maxItemCount(1)
+                .maxItemCount(500)
                 .build();
     }
 }

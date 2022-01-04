@@ -66,7 +66,11 @@ public class AlertItemProcessor implements ItemProcessor<MovingAverageAlert, Mov
                 "averageTradePercent=\""+alert.getAverageTrade()+"\","+
                 "profitFactor=\""+alert.getProfitFactor()+"\","+
                 "maxDrawdown=\""+alert.getMaxDrawdown()+"\","+
-                "closedTrades=\""+alert.getClosedTrades()+"\"");
+                "closedTrades=\""+alert.getClosedTrades()+"\","+
+                "riskRewardGains=\""+alert.getRiskRewardGains()+"\","+
+                "vwapOn=\""+alert.isVwapOn()+"\","+
+                "vwapSource=\""+alert.getVwapSource()+"\""
+                );
         return command;
     }
 }

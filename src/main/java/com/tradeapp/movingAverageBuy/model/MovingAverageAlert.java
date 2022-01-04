@@ -23,13 +23,16 @@ public class MovingAverageAlert {
     public double stopLoss;
     public double takeProfit;
     public boolean startDate;
+    public double riskRewardGains;
+    public boolean vwapOn;
+    public String vwapSource;
     public Date lastUpdated = new Date();
 
     public MovingAverageAlert(String ticker, int movingAverageShortPeriod, int movingAverageLongPeriod,
-                              String movingAverage, String source, double averagePercentagePerDay,
-                              double profitFactor, int averageBarsInTrade, double averageTrade, double maxDrawdown,
-                              double percentProfitable, int closedTrades, double netProfit, double stopLoss,
-                              double takeProfit, boolean startDate) {
+                              String movingAverage, String source, double averagePercentagePerDay, double profitFactor,
+                              int averageBarsInTrade, double averageTrade, double maxDrawdown, double percentProfitable,
+                              int closedTrades, double netProfit, double stopLoss, double takeProfit, boolean startDate,
+                              double riskRewardGains, boolean vwapOn, String vwapSource) {
         this.ticker = ticker;
         this.movingAverageShortPeriod = movingAverageShortPeriod;
         this.movingAverageLongPeriod = movingAverageLongPeriod;
@@ -46,6 +49,9 @@ public class MovingAverageAlert {
         this.stopLoss = stopLoss;
         this.takeProfit = takeProfit;
         this.startDate = startDate;
+        this.riskRewardGains = riskRewardGains;
+        this.vwapOn = vwapOn;
+        this.vwapSource = vwapSource;
     }
 
     public String getTicker() {
@@ -176,6 +182,30 @@ public class MovingAverageAlert {
         this.startDate = startDate;
     }
 
+    public double getRiskRewardGains() {
+        return riskRewardGains;
+    }
+
+    public void setRiskRewardGains(double riskRewardGains) {
+        this.riskRewardGains = riskRewardGains;
+    }
+
+    public boolean isVwapOn() {
+        return vwapOn;
+    }
+
+    public void setVwapOn(boolean vwapOn) {
+        this.vwapOn = vwapOn;
+    }
+
+    public String getVwapSource() {
+        return vwapSource;
+    }
+
+    public void setVwapSource(String vwapSource) {
+        this.vwapSource = vwapSource;
+    }
+
     public Date getLastUpdated() {
         return lastUpdated;
     }
@@ -203,6 +233,9 @@ public class MovingAverageAlert {
                 ", stopLoss=" + stopLoss +
                 ", takeProfit=" + takeProfit +
                 ", startDate=" + startDate +
+                ", riskRewardGains=" + riskRewardGains +
+                ", vwapOn=" + vwapOn +
+                ", vwapSource='" + vwapSource + '\'' +
                 ", lastUpdated=" + lastUpdated +
                 '}';
     }
